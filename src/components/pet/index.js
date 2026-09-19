@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   getCatImages,
   getDogImages
@@ -67,8 +68,8 @@ const Pet = ({ animal }) => {
       : '/missing-animal.png');
 
   return (
-    <a
-      href={`/${animal.type.toLowerCase()}/${animal.id}`}
+    <Link
+      to={`/${animal.type.toLowerCase()}/${animal.id}`}
       className="pet"
     >
       <article>
@@ -86,7 +87,7 @@ const Pet = ({ animal }) => {
         <p>Color: {animal.colors.primary}</p>
         <p>Gender: {animal.gender}</p>
       </article>
-    </a>
+    </Link>
   );
 };
 
